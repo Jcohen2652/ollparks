@@ -1,0 +1,44 @@
+{% extends "_base.html.j2" %}
+{% block title %}Offre de prise à bail — {{ bien.adresse }}{% endblock %}
+{% block content %}
+<h1>Offre de prise à bail</h1>
+
+<p>
+La société <strong>{{ prospect.raison_sociale }}</strong>{% if prospect.siren %} (SIREN {{ prospect.siren }}){% endif %},
+représentée par {{ prospect.contact_nom | default("son représentant dûment habilité") }},
+formule par la présente une offre de prise à bail portant sur les locaux suivants :
+</p>
+
+<h2>1. Désignation des locaux</h2>
+<table>
+  <tr><th>Adresse</th><td>{{ bien.adresse }}{% if bien.code_postal %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}</td></tr>
+  <tr><th>Surface utile</th><td>{{ bien.surface_m2 }} m²</td></tr>
+  {% if bien.typologie %}<tr><th>Typologie</th><td>{{ bien.typologie }}</td></tr>{% endif %}
+</table>
+
+<h2>2. Conditions financières</h2>
+<table>
+  <tr><th>Loyer annuel HT/HC</th><td><strong>{{ "{:,.0f}".format(loyer_annuel) | replace(",", " ") }} €</strong></td></tr>
+  <tr><th>Dépôt de garantie</th><td>{{ "{:,.0f}".format(depot_garantie) | replace(",", " ") }} €</td></tr>
+  {% if franchise_mois %}<tr><th>Franchise demandée</th><td>{{ franchise_mois }} mois</td></tr>{% endif %}
+  {% if indexation %}<tr><th>Indexation</th><td>{{ indexation }}</td></tr>{% endif %}
+</table>
+
+<h2>3. Modalités du bail</h2>
+<ul>
+  <li>Type de bail : <strong>{{ type_bail | default("Bail commercial 3-6-9") }}</strong></li>
+  <li>Durée : <strong>{{ duree_bail }}</strong></li>
+  {% if date_prise_effet %}<li>Date de prise d'effet souhaitée : {{ date_prise_effet }}</li>{% endif %}
+  {% if travaux_preneur %}<li>Travaux à la charge du preneur : {{ travaux_preneur }}</li>{% endif %}
+</ul>
+
+<h2>4. Garanties</h2>
+<p>
+Le preneur fournira les bilans des trois derniers exercices et un extrait Kbis
+de moins de 3 mois à la signature.
+</p>
+
+<div class="signature">
+  <p><span class="line">Pour {{ prospect.raison_sociale }}</span></p>
+</div>
+{% endblock %}

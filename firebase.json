@@ -1,0 +1,15 @@
+{
+  "apphosting": {
+    "backendId": "oll-parks-frontend",
+    "rootDir": "frontend",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "functions",
+      "supabase",
+      "backend-legacy"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+# Configuration locale Supabase CLI
+# Doc : https://supabase.com/docs/guides/cli/config
+
+project_id = "aqltsbshosdbxwrnotui"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[studio]
+enabled = true
+port = 54323
+api_url = "http://127.0.0.1"
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+enable_confirmations = false  # passer à true en prod
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[edge_runtime]
+enabled = true
+inspector_port = 8083
+
+[functions.matching]
+verify_jwt = true
+
+[functions.outlook-sync]
+verify_jwt = true
+
+[functions.pappers-enrich]
+verify_jwt = true
+
+[functions.pappers-proprietaires]
+verify_jwt = true
+
+[functions.document-generate]
+verify_jwt = true
+
+[functions.gmail-oauth-callback]
+verify_jwt = true
+
+[functions.gmail-sync]
+verify_jwt = true

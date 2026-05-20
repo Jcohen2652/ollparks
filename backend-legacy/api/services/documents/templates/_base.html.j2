@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}Document OLL PARKS{% endblock %}</title>
+<style>
+  @page { size: A4; margin: 2cm; }
+  body { font-family: Helvetica, Arial, sans-serif; color: #1f2937; font-size: 11pt; line-height: 1.5; }
+  h1 { color: #1e3a8a; font-size: 18pt; border-bottom: 2px solid #1e3a8a; padding-bottom: 0.3em; }
+  h2 { color: #1e3a8a; font-size: 14pt; margin-top: 1.5em; }
+  h3 { color: #475569; font-size: 12pt; }
+  .meta { color: #64748b; font-size: 9pt; margin-bottom: 2em; }
+  .signature { margin-top: 3em; }
+  .signature .line { display: inline-block; width: 250px; border-top: 1px solid #94a3b8; padding-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+  td, th { border: 1px solid #e2e8f0; padding: 6px 10px; text-align: left; }
+  th { background: #f1f5f9; font-weight: 600; }
+  .footer { position: fixed; bottom: 1cm; left: 2cm; right: 2cm; font-size: 8pt; color: #94a3b8; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 0.5em; }
+</style>
+</head>
+<body>
+{% block content %}{% endblock %}
+<div class="footer">
+  OLL PARKS — Document généré le {{ generated_at[:19] | replace("T", " ") }} UTC
+</div>
+</body>
+</html>

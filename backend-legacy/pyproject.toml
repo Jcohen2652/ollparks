@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oll-parks-api"
+version = "0.1.0"
+description = "OLL PARKS — API backend (FastAPI)"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+  "sqlalchemy>=2.0",
+  "psycopg[binary]>=3.2",
+  "alembic>=1.14",
+  "pydantic>=2.10",
+  "pydantic-settings>=2.6",
+  "python-multipart>=0.0.20",
+  "httpx>=0.28",
+  "geoalchemy2>=0.16",
+  "shapely>=2.0",
+  "msal>=1.31",
+  "python-docx>=1.1",
+  "jinja2>=3.1",
+  "weasyprint>=63.0",
+  "python-jose[cryptography]>=3.3",
+  "passlib[bcrypt]>=1.7",
+  # passlib 1.7.4 a un bug avec bcrypt>=4.1 (envoie un secret > 72 bytes en
+  # interne pour détecter un bug, que bcrypt récent refuse). Tant que passlib
+  # n'est pas patché, on pin bcrypt à la dernière 4.0.x.
+  "bcrypt<4.1",
+  "email-validator>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "pytest-asyncio>=0.25",
+  "ruff>=0.8",
+  "mypy>=1.13",
+  "factory-boy>=3.3",
+]
+
+[tool.setuptools.packages.find]
+include = ["api*"]
+exclude = ["alembic*", "tests*", "scripts*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = [
+  "fastapi.Depends",
+  "fastapi.Query",
+  "fastapi.Path",
+  "fastapi.Body",
+  "fastapi.Header",
+  "fastapi.Cookie",
+  "fastapi.File",
+  "fastapi.Form",
+  "fastapi.Security",
+  "api.services.auth.require_role",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

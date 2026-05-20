@@ -1,0 +1,46 @@
+{% extends "_base.html.j2" %}
+{% block title %}Mandat — {{ mandant.raison_sociale }}{% endblock %}
+{% block content %}
+<h1>Mandat de {{ type_mandat }}</h1>
+
+<p>
+Entre les soussignés :
+</p>
+
+<table>
+  <tr><th>Mandant</th><td><strong>{{ mandant.raison_sociale }}</strong>{% if mandant.siren %} (SIREN {{ mandant.siren }}){% endif %}</td></tr>
+  {% if mandant.adresse %}<tr><th>Adresse</th><td>{{ mandant.adresse }}</td></tr>{% endif %}
+  <tr><th>Mandataire</th><td><strong>OLL PARKS</strong></td></tr>
+</table>
+
+<h2>1. Objet du mandat</h2>
+<p>
+Le mandant donne mandat <strong>{{ exclusivite | default("non exclusif") }}</strong>
+au mandataire pour {{ objet | default("rechercher des biens / acquéreurs / preneurs") }}
+dans les conditions ci-après.
+</p>
+
+<h2>2. Durée</h2>
+<p>
+Durée : <strong>{{ duree_mandat }}</strong>, à compter de la signature.
+{% if reconduction %}Renouvellement par tacite reconduction par périodes équivalentes, sauf dénonciation 30 jours avant le terme.{% endif %}
+</p>
+
+<h2>3. Honoraires</h2>
+<p>
+Le mandant s'engage à verser au mandataire des honoraires égaux à
+<strong>{{ honoraires_pct }} %</strong> HT du prix de transaction (vente)
+ou {{ honoraires_loyer | default("1 mois de loyer HT/HC") }} (location).
+</p>
+
+<h2>4. Reporting</h2>
+<p>
+Le mandataire s'engage à fournir un compte-rendu d'activité bimensuel et à
+informer le mandant de toute proposition reçue dans les 48h.
+</p>
+
+<div class="signature">
+  <p><span class="line">Pour le Mandant</span></p>
+  <p style="margin-top:2em;"><span class="line">Pour OLL PARKS</span></p>
+</div>
+{% endblock %}

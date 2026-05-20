@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OLL PARKS — Plateforme immobilière B2B</title>
+<meta name="description" content="SaaS de prospection, matching et gestion commerciale immobilière. 15 ans d'emails Outlook + Pappers Immo + scoring IA." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', system-ui, sans-serif; }
+  .gradient-text {
+    background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #0891b2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  }
+  .card-hover { transition: all 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .module-num {
+    background: linear-gradient(135deg, #1e40af, #0891b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/70 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center text-white font-bold">O</div>
+      <span class="font-bold text-lg">OLL PARKS</span>
+    </div>
+    <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+      <a href="#vision" class="hover:text-slate-900">Vision</a>
+      <a href="#modules" class="hover:text-slate-900">Modules</a>
+      <a href="#scoring" class="hover:text-slate-900">Scoring</a>
+      <a href="#stack" class="hover:text-slate-900">Stack</a>
+      <a href="#roadmap" class="hover:text-slate-900">Roadmap</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-40 pb-24 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium mb-8">
+      <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+      Cahier des charges — v1.0 — 2026
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+      <span class="gradient-text">La machine à deals</span><br/>
+      <span class="text-slate-900">immobiliers d'entreprise</span>
+    </h1>
+    <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
+      Plateforme SaaS B2B qui transforme <strong>15 ans d'emails Outlook</strong>, la base <strong>Pappers Immo</strong> et le savoir-faire commercial OLL PARKS en un moteur d'opportunités automatisé.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="#modules" class="px-8 py-3 rounded-lg gradient-bg text-white font-semibold hover:opacity-90 transition">Découvrir les 10 modules</a>
+      <a href="#scoring" class="px-8 py-3 rounded-lg bg-white border border-slate-300 font-semibold hover:bg-slate-50 transition">Voir le moteur de scoring</a>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="py-16 px-6 bg-white border-y border-slate-200">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <div class="text-4xl md:text-5xl font-bold gradient-text">×5</div>
+      <div class="mt-2 text-sm text-slate-600">Opportunités détectées / mois</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-bold gradient-text">÷3</div>
+      <div class="mt-2 text-sm text-slate-600">Temps de qualification d'un lead</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-bold gradient-text">15 ans</div>
+      <div class="mt-2 text-sm text-slate-600">D'historique Outlook exploité</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-bold gradient-text">/100</div>
+      <div class="mt-2 text-sm text-slate-600">Score offre × demande</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">Vision produit</h2>
+        <h3 class="text-4xl font-bold mb-6">Détecter, matcher, conclure — plus vite.</h3>
+        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+          Le marché de l'immobilier d'entreprise repose à 80 % sur de l'information non publique : signaux faibles dans les emails, propriétaires invisibles derrière des SCI, opportunités off-market.
+        </p>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          OLL PARKS centralise cette intelligence et la transforme en pipeline commercial automatisé.
+        </p>
+      </div>
+      <div class="bg-slate-900 rounded-2xl p-8 text-white">
+        <div class="text-sm text-blue-300 font-mono mb-3">// objectif final</div>
+        <ul class="space-y-3 text-lg">
+          <li class="flex items-start gap-3"><span class="text-blue-400">→</span><span>Détecter des opportunités immobilières</span></li>
+          <li class="flex items-start gap-3"><span class="text-blue-400">→</span><span>Matcher automatiquement offres et besoins</span></li>
+          <li class="flex items-start gap-3"><span class="text-blue-400">→</span><span>Générer des deals concrets</span></li>
+          <li class="flex items-start gap-3"><span class="text-blue-400">→</span><span>Automatiser la prospection à grande échelle</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section id="modules" class="py-24 px-6 bg-slate-100">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">Architecture fonctionnelle</h2>
+      <h3 class="text-4xl font-bold">10 modules, 1 plateforme</h3>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">01</div>
+        <h4 class="text-xl font-bold mb-2">Prospection entreprises</h4>
+        <p class="text-slate-600 text-sm">LinkedIn + enrichissement Pappers. Cible : DG, Direction Immobilière, Direction Expansion.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">02</div>
+        <h4 class="text-xl font-bold mb-2">Offres immobilières</h4>
+        <p class="text-slate-600 text-sm">Marché + off-market + mandats internes. Bureaux, entrepôts, commerces, mixte.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover border-2 border-blue-100">
+        <div class="text-5xl font-bold module-num mb-3">03</div>
+        <h4 class="text-xl font-bold mb-2">Matching intelligent <span class="text-xs text-blue-600 font-semibold">CŒUR</span></h4>
+        <p class="text-slate-600 text-sm">Moteur de scoring /100 : asset, géo, surface/budget, timing, signaux, historique, contact.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover border-2 border-red-100">
+        <div class="text-5xl font-bold module-num mb-3">04</div>
+        <h4 class="text-xl font-bold mb-2">Outlook <span class="text-xs text-red-600 font-semibold">CRITIQUE</span></h4>
+        <p class="text-slate-600 text-sm">Microsoft Graph. Ingestion 15 ans. Extraction contacts, entreprises, besoins, signatures.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">05</div>
+        <h4 class="text-xl font-bold mb-2">Pappers Immo</h4>
+        <p class="text-slate-600 text-sm">Identification propriétaires, SCI, foncières. Scoring + détection off-market.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">06</div>
+        <h4 class="text-xl font-bold mb-2">CRM</h4>
+        <p class="text-slate-600 text-sm">Fiches 360°, pipeline Kanban, scoring leads, suivi opportunités.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">07</div>
+        <h4 class="text-xl font-bold mb-2">Agenda & RDV</h4>
+        <p class="text-slate-600 text-sm">Sync bidirectionnelle Outlook. Briefing automatique avant RDV.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">08</div>
+        <h4 class="text-xl font-bold mb-2">Visites</h4>
+        <p class="text-slate-600 text-sm">Génération auto : bon de visite, dénonce propriétaire, modalités.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">09</div>
+        <h4 class="text-xl font-bold mb-2">Documents</h4>
+        <p class="text-slate-600 text-sm">Templates DOCX/PDF dynamiques : offre, prise à bail, LOI, mandat, courrier.</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 card-hover">
+        <div class="text-5xl font-bold module-num mb-3">10</div>
+        <h4 class="text-xl font-bold mb-2">VISIAL QIE</h4>
+        <p class="text-slate-600 text-sm">Synchronisation actifs, données techniques, suivi dossiers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORING ENGINE -->
+<section id="scoring" class="py-24 px-6 bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-sm font-semibold text-blue-400 uppercase tracking-wide mb-3">Cerveau logiciel</h2>
+      <h3 class="text-4xl font-bold">Le moteur de matching</h3>
+      <p class="text-slate-400 mt-4 max-w-2xl mx-auto">8 fonctions atomiques + 1 score final + 1 action recommandée. Apprentissage continu sur l'historique des deals.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div class="bg-slate-800 rounded-xl p-8 font-mono text-sm overflow-x-auto">
+<pre class="text-slate-300"><span class="text-blue-400">def</span> <span class="text-yellow-300">calculate_final_score</span>(besoin, bien, contact, history):
+    parts = {
+        <span class="text-green-400">"asset"</span>:          score_asset(besoin, bien),
+        <span class="text-green-400">"geo"</span>:            score_geo(besoin, bien),
+        <span class="text-green-400">"surface_budget"</span>: score_surface_budget(besoin, bien),
+        <span class="text-green-400">"timing"</span>:         score_timing(besoin, bien),
+        <span class="text-green-400">"signals"</span>:        score_signals(besoin),
+        <span class="text-green-400">"history"</span>:        score_history(history),
+        <span class="text-green-400">"contact"</span>:        score_contact(contact),
+    }
+    base = sum(parts.values())
+    final = max(<span class="text-purple-400">0</span>, min(<span class="text-purple-400">100</span>, base - penalties(...)))
+    <span class="text-blue-400">return</span> final, parts
+
+<span class="text-blue-400">def</span> <span class="text-yellow-300">recommend_action</span>(score):
+    <span class="text-blue-400">if</span> score >= <span class="text-purple-400">80</span>: <span class="text-blue-400">return</span> <span class="text-green-400">"appel_immediat"</span>
+    <span class="text-blue-400">if</span> score >= <span class="text-purple-400">60</span>: <span class="text-blue-400">return</span> <span class="text-green-400">"envoi_fiche"</span>
+    <span class="text-blue-400">if</span> score >= <span class="text-purple-400">40</span>: <span class="text-blue-400">return</span> <span class="text-green-400">"qualification"</span>
+    <span class="text-blue-400">return</span> <span class="text-green-400">"veille"</span>
+</pre>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+          <div><div class="font-bold text-lg">🔥 Score ≥ 80</div><div class="text-sm text-slate-400">Priorité absolue</div></div>
+          <div class="font-mono text-red-400">appel_immediat</div>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-lg bg-orange-500/10 border border-orange-500/30">
+          <div><div class="font-bold text-lg">📧 Score ≥ 60</div><div class="text-sm text-slate-400">Push commercial</div></div>
+          <div class="font-mono text-orange-400">envoi_fiche</div>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <div><div class="font-bold text-lg">🔍 Score ≥ 40</div><div class="text-sm text-slate-400">À creuser</div></div>
+          <div class="font-mono text-yellow-400">qualification</div>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-lg bg-slate-700/30 border border-slate-600">
+          <div><div class="font-bold text-lg">👀 Score &lt; 40</div><div class="text-sm text-slate-400">Monitoring</div></div>
+          <div class="font-mono text-slate-400">veille</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">Stack technique</h2>
+      <h3 class="text-4xl font-bold">Moderne, scalable, observable</h3>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">⚛️</div>
+        <h4 class="font-bold text-lg mb-3">Frontend</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>Next.js 15 (App Router)</li>
+          <li>TypeScript + Tailwind</li>
+          <li>shadcn/ui</li>
+          <li>Mapbox GL JS</li>
+          <li>TanStack Query</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">⚡</div>
+        <h4 class="font-bold text-lg mb-3">Backend</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>Python 3.11 + FastAPI</li>
+          <li>Node.js (workers)</li>
+          <li>BullMQ + Redis</li>
+          <li>SQLAlchemy + Pydantic</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">💾</div>
+        <h4 class="font-bold text-lg mb-3">Data</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>PostgreSQL 16 + PostGIS</li>
+          <li>ElasticSearch 8</li>
+          <li>Redis 7</li>
+          <li>S3 (Scaleway / R2)</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">🔌</div>
+        <h4 class="font-bold text-lg mb-3">APIs externes</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>Microsoft Graph (Outlook)</li>
+          <li>Pappers Entreprises + Immo</li>
+          <li>VISIAL QIE</li>
+          <li>LinkedIn Sales Nav</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">🔐</div>
+        <h4 class="font-bold text-lg mb-3">Sécurité</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>Auth0 / Clerk (SSO Microsoft)</li>
+          <li>RBAC granulaire</li>
+          <li>RGPD by design</li>
+          <li>Hébergement UE</li>
+        </ul>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-6">
+        <div class="text-2xl mb-3">📊</div>
+        <h4 class="font-bold text-lg mb-3">Ops & DX</h4>
+        <ul class="text-sm text-slate-600 space-y-1">
+          <li>GitHub Actions (CI/CD)</li>
+          <li>Docker + Docker Compose</li>
+          <li>Sentry + Grafana + Loki</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="py-24 px-6 bg-slate-100">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-3">Plan de route</h2>
+      <h3 class="text-4xl font-bold">6 phases sur 20 semaines</h3>
+    </div>
+    <div class="space-y-4">
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 0</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Bootstrap <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Repo, architecture, cahier des charges complet</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 1</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Fondations <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Schéma SQL complet, 11 modèles ORM, API REST, frontend Next.js, moteur de matching + 18 tests</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 2</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Outlook 🔥 <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Microsoft Graph (MSAL), ingestion incrémentale, extraction NER (signatures, besoins, signaux), UI timeline</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 3</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Pappers + propriétaires <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Clients Pappers Entreprises + Immo, scoring propriétaire (cible off-market)</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 4</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Visites + documents <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">8 templates Jinja (bon de visite, dénonce, modalités, offre acquisition/PAB, LOI, mandat, courrier proprio) → PDF/DOCX/HTML</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 5</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Agenda + VISIAL QIE <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Sync calendrier Graph, vue semaine, client VISIAL QIE + sync actifs</div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl p-6 flex items-start gap-6 border-l-4 border-green-500">
+        <div class="font-mono text-sm text-slate-500 w-24 shrink-0">Phase 6</div>
+        <div class="flex-1">
+          <div class="font-bold text-lg">Industrialisation <span class="text-green-600 text-sm">✅ Livré</span></div>
+          <div class="text-sm text-slate-600">Auth JWT + RBAC, carte Mapbox, CRM 360° + pipeline Kanban, Docker, CI GitHub Actions, 30+ tests</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 gradient-bg text-white text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">MVP livré — prêt pour la mise en service</h2>
+    <p class="text-xl text-blue-100 mb-10">Les 7 phases du roadmap initial sont implémentées : 11 modules, 15+ endpoints REST, 12 pages frontend, 30+ tests.</p>
+    <a href="#modules" class="px-8 py-3 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 transition inline-block">📘 Relire les modules</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 px-6 bg-slate-900 text-slate-400 text-center text-sm">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center justify-center gap-2 mb-3">
+      <div class="w-7 h-7 rounded-md bg-white/10 flex items-center justify-center text-white font-bold text-xs">O</div>
+      <span class="font-bold text-white">OLL PARKS</span>
+    </div>
+    <p>Cahier des charges v1.0 — 2026 — Document de référence</p>
+  </div>
+</footer>
+
+</body>
+</html>

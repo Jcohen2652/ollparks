@@ -1,0 +1,38 @@
+# Firebase App Hosting — config build/runtime
+# Doc : https://firebase.google.com/docs/app-hosting/configure
+#
+# Ce fichier est lu par App Hosting au moment du build. Le `rootDir` côté
+# backend Firebase doit pointer vers `frontend/` (à configurer dans la console
+# ou au `firebase init apphosting`).
+
+runConfig:
+  # Ressources de la VM Cloud Run qui sert le SSR Next.js.
+  # Nano = projets perso ; bumper à small/medium si trafic.
+  cpu: 1
+  memoryMiB: 512
+  maxInstances: 3
+  minInstances: 0
+  concurrency: 80
+
+# Variables d'env exposées au runtime Next.js.
+# - Les NEXT_PUBLIC_* sont injectées au build → visibles côté client.
+# - Pour les vrais secrets serveur (SUPABASE_SERVICE_ROLE_KEY, MICROSOFT_CLIENT_SECRET,
+#   PAPPERS_API_KEY), créer le secret dans Google Secret Manager puis référencer
+#   ici via `secret: NAME` (ne PAS écrire la valeur en clair dans ce fichier).
+env:
+  - variable: NEXT_PUBLIC_SUPABASE_URL
+    value: https://aqltsbshosdbxwrnotui.supabase.co
+    availability:
+      - BUILD
+      - RUNTIME
+
+  - variable: NEXT_PUBLIC_SUPABASE_ANON_KEY
+    value: sb_publishable_JQGqgDEJiKC_mzKvN-wdWw_to_QGHmw
+    availability:
+      - BUILD
+      - RUNTIME
+
+  # À activer plus tard quand tu auras un token Mapbox :
+  # - variable: NEXT_PUBLIC_MAPBOX_TOKEN
+  #   secret: MAPBOX_TOKEN
+  #   availability: [BUILD, RUNTIME]

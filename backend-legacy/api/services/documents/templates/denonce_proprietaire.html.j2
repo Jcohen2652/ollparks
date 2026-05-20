@@ -1,0 +1,34 @@
+{% extends "_base.html.j2" %}
+{% block title %}Dénonce propriétaire — {{ bien.reference }}{% endblock %}
+{% block content %}
+<h1>Dénonce propriétaire</h1>
+<p class="meta">Bien : <strong>{{ bien.adresse }}</strong> · Visite du {{ date_visite }}</p>
+
+<p>{{ proprietaire.nom }},</p>
+
+<p>
+Conformément aux usages de la profession et au mandat qui nous lie, nous vous
+dénonçons par la présente la société suivante, à laquelle nous présentons votre
+bien situé au <strong>{{ bien.adresse }}</strong>{% if bien.code_postal %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %} :
+</p>
+
+<table>
+  <tr><th>Société dénoncée</th><td>{{ prospect.raison_sociale }}</td></tr>
+  {% if prospect.siren %}<tr><th>SIREN</th><td>{{ prospect.siren }}</td></tr>{% endif %}
+  <tr><th>Date de visite</th><td>{{ date_visite }}</td></tr>
+</table>
+
+<p>
+Cette dénonce vous est adressée afin que toute relation directe ou indirecte
+ultérieure entre vous et la société dénoncée portant sur ce bien soit rattachée
+à notre intervention, conformément à l'article L. 222-15 du Code de la consommation
+et aux usages courtiers.
+</p>
+
+<p>Cordialement,</p>
+
+<div class="signature">
+  <p><strong>{{ agent.nom }}</strong><br/>
+  OLL PARKS</p>
+</div>
+{% endblock %}

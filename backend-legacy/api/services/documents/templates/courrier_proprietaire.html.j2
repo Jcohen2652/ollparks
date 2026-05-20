@@ -1,0 +1,46 @@
+{% extends "_base.html.j2" %}
+{% block title %}Courrier propriétaire{% endblock %}
+{% block content %}
+<p style="text-align: right;">
+  {{ agent.nom }}<br/>
+  OLL PARKS<br/>
+  {{ agent.email }}
+</p>
+
+<p style="margin-top: 3em;">
+  À l'attention de<br/>
+  <strong>{{ proprietaire.nom }}</strong><br/>
+  Concernant le bien sis : <strong>{{ bien.adresse }}</strong>
+</p>
+
+<p>Madame, Monsieur,</p>
+
+<p>
+Notre cabinet, OLL PARKS, accompagne depuis plus de quinze ans les groupes français
+et internationaux dans leurs opérations immobilières d'entreprise (acquisition,
+location, cession, restructuration).
+</p>
+
+<p>
+Nous identifions actuellement plusieurs sociétés à la recherche d'actifs présentant
+les caractéristiques de votre bien situé au <strong>{{ bien.adresse }}</strong>{% if bien.code_postal %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}.
+</p>
+
+<p>
+Si vous envisagez à moyen terme une cession, un arbitrage ou une nouvelle
+location, nous serions ravis d'échanger sur les conditions du marché et les
+opportunités que nous pourrions vous présenter — sans engagement de votre part.
+</p>
+
+<p>
+N'hésitez pas à nous contacter au numéro indiqué ci-dessus ou par retour de mail.
+</p>
+
+<p style="margin-top: 2em;">
+  Bien cordialement,
+</p>
+
+<div class="signature">
+  <p><strong>{{ agent.nom }}</strong><br/>OLL PARKS</p>
+</div>
+{% endblock %}

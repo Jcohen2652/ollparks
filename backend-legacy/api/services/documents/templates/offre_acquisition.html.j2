@@ -1,0 +1,42 @@
+{% extends "_base.html.j2" %}
+{% block title %}Offre d'acquisition — {{ bien.reference }}{% endblock %}
+{% block content %}
+<h1>Offre d'acquisition</h1>
+<p class="meta">Référence du bien : <strong>{{ bien.reference }}</strong></p>
+
+<p>
+La société <strong>{{ prospect.raison_sociale }}</strong>{% if prospect.siren %} (SIREN {{ prospect.siren }}){% endif %},
+représentée par {{ prospect.contact_nom | default("son représentant dûment habilité") }},
+formule par la présente une offre ferme d'acquisition portant sur le bien suivant :
+</p>
+
+<h2>1. Désignation du bien</h2>
+<table>
+  <tr><th>Adresse</th><td>{{ bien.adresse }}{% if bien.code_postal %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}</td></tr>
+  <tr><th>Typologie</th><td>{{ bien.typologie | default("—") }}</td></tr>
+  <tr><th>Surface</th><td>{{ bien.surface_m2 | default("—") }} m²</td></tr>
+</table>
+
+<h2>2. Conditions financières</h2>
+<table>
+  <tr><th>Prix proposé</th><td><strong>{{ "{:,.0f}".format(prix_propose) | replace(",", " ") }} €</strong> net vendeur</td></tr>
+  {% if conditions_suspensives %}<tr><th>Conditions suspensives</th><td>{{ conditions_suspensives }}</td></tr>{% endif %}
+</table>
+
+<h2>3. Délais</h2>
+<ul>
+  <li>Signature de la promesse : <strong>{{ delai_signature_promesse }}</strong></li>
+  <li>Signature de l'acte authentique : <strong>{{ delai_acte_authentique }}</strong></li>
+  {% if delai_validite_offre %}<li>Validité de la présente offre : {{ delai_validite_offre }}</li>{% endif %}
+</ul>
+
+<h2>4. Frais & honoraires</h2>
+<p>
+Frais d'acte à la charge de l'acquéreur. Honoraires de transaction OLL PARKS
+à la charge de {{ honoraires_a_charge_de | default("l'acquéreur") }}.
+</p>
+
+<div class="signature">
+  <p><span class="line">Pour {{ prospect.raison_sociale }}</span></p>
+</div>
+{% endblock %}

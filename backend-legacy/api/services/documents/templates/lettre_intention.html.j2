@@ -1,0 +1,32 @@
+{% extends "_base.html.j2" %}
+{% block title %}Lettre d'intention — {{ bien.adresse }}{% endblock %}
+{% block content %}
+<h1>Lettre d'intention</h1>
+
+<p>
+La société <strong>{{ prospect.raison_sociale }}</strong> manifeste par la présente
+son intention de poursuivre les négociations portant sur le bien situé au
+<strong>{{ bien.adresse }}</strong>{% if bien.ville %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}.
+</p>
+
+<h2>Intention</h2>
+<p>{{ intention }}</p>
+
+<h2>Étapes envisagées</h2>
+<ol>
+  <li>Audit technique et juridique du bien (data room) — sous 15 jours</li>
+  <li>Validation par le comité d'investissement — sous {{ delai_signature_loi }}</li>
+  <li>Signature de la promesse synallagmatique — sous 30 jours après comité</li>
+</ol>
+
+<h2>Caractère non-engageant</h2>
+<p>
+La présente lettre d'intention n'a aucun caractère contractuel et ne lie pas
+juridiquement les parties. Seul l'acte authentique (ou la promesse signée)
+emportera engagement réciproque.
+</p>
+
+<div class="signature">
+  <p><span class="line">Pour {{ prospect.raison_sociale }}</span></p>
+</div>
+{% endblock %}

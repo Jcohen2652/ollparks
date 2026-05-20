@@ -1,0 +1,26 @@
+{% extends "_base.html.j2" %}
+{% block title %}Modalités de visite — {{ bien.reference }}{% endblock %}
+{% block content %}
+<h1>Modalités de visite</h1>
+<p class="meta">Date : <strong>{{ date_visite }}</strong></p>
+
+<table>
+  <tr><th>Adresse du bien</th><td>{{ bien.adresse }}{% if bien.ville %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}</td></tr>
+  <tr><th>Référence interne</th><td>{{ bien.reference }}</td></tr>
+  <tr><th>Contact sur place</th><td>{{ contact_gardien }}</td></tr>
+  {% if badge_acces %}<tr><th>Badge d'accès</th><td>{{ badge_acces }}</td></tr>{% endif %}
+  {% if instructions %}<tr><th>Instructions</th><td>{{ instructions }}</td></tr>{% endif %}
+</table>
+
+<h2>Plan d'accès</h2>
+<p>
+Métro / RER / parking : voir document annexe ou Google Maps en cliquant sur l'adresse ci-dessus.
+</p>
+
+<h2>Pièces à apporter</h2>
+<ul>
+  <li>Pièce d'identité du visiteur</li>
+  <li>Mandat de visite signé (si déjà transmis)</li>
+  <li>Bon de visite (à signer sur place)</li>
+</ul>
+{% endblock %}

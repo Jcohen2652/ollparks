@@ -1,0 +1,36 @@
+{% extends "_base.html.j2" %}
+{% block title %}Bon de visite — {{ bien.reference }}{% endblock %}
+{% block content %}
+<h1>Bon de visite</h1>
+<p class="meta">Référence : <strong>{{ bien.reference }}</strong> · Date de visite : <strong>{{ date_visite }}</strong></p>
+
+<h2>1. Bien visité</h2>
+<table>
+  <tr><th>Adresse</th><td>{{ bien.adresse }}{% if bien.ville %}, {{ bien.code_postal }} {{ bien.ville }}{% endif %}</td></tr>
+  <tr><th>Typologie</th><td>{{ bien.typologie | default("—") }}</td></tr>
+  <tr><th>Surface</th><td>{{ bien.surface_m2 | default("—") }} m²</td></tr>
+</table>
+
+<h2>2. Visiteur</h2>
+<table>
+  <tr><th>Société</th><td>{{ prospect.raison_sociale }}</td></tr>
+  <tr><th>Représentant</th><td>{{ prospect.contact_nom }}</td></tr>
+  {% if prospect.contact_email %}<tr><th>Email</th><td>{{ prospect.contact_email }}</td></tr>{% endif %}
+</table>
+
+<h2>3. Engagement</h2>
+<p>
+La société visiteuse reconnaît visiter ce bien par l'entremise exclusive de la société
+<strong>OLL PARKS</strong>, et s'engage à signaler à OLL PARKS toute négociation
+ultérieure portant sur ce bien (acquisition, location, partenariat).
+</p>
+<p>
+À défaut, la société visiteuse pourra être tenue au paiement d'une indemnité égale
+aux honoraires usuels de transaction.
+</p>
+
+<div class="signature">
+  <p><span class="line">Signature visiteur (lu et approuvé)</span></p>
+  <p style="margin-top:2em;"><span class="line">Pour OLL PARKS</span></p>
+</div>
+{% endblock %}

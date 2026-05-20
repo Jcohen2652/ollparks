@@ -1,0 +1,32 @@
+# OLL PARKS — raccourcis dev
+
+.PHONY: up down logs ps build test backend-test backend-shell db-shell reset-db
+
+up:
+	docker compose up -d
+
+down:
+	docker compose down
+
+logs:
+	docker compose logs -f
+
+ps:
+	docker compose ps
+
+build:
+	docker compose build
+
+test: backend-test
+
+backend-test:
+	docker compose run --rm backend pytest -v
+
+backend-shell:
+	docker compose exec backend bash
+
+db-shell:
+	docker compose exec postgres psql -U oll -d oll_parks
+
+reset-db:
+	docker compose down -v && docker compose up -d postgres
